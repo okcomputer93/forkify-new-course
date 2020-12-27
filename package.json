@@ -10,7 +10,7 @@
   "author": "okcomputer",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^1.12.4",
-    "sass": "^1.30.0"
+    "parcel": "^2.0.0-nightly.491",
+    "sass": "^1.26.10"
   }
 }
