@@ -17,3 +17,7 @@ export const getJSON = async function (url) {
     throw error;
   }
 };
+
+export const isArrayEmpty = function (data) {
+  return Array.isArray(data) && data.length === 0;
+};
