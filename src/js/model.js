@@ -1,4 +1,4 @@
-import { API_URL } from './config.js';
+import { MAX_RESULTS_PER_QUERY, API_URL } from './config.js';
 import { getJSON } from './helpers.js';
 export const state = {
   recipe: {},
@@ -6,6 +6,8 @@ export const state = {
     //* Just in case we need queries information :]
     query: '',
     results: [],
+    page: 1,
+    resultsPerPage: MAX_RESULTS_PER_QUERY,
   },
 };
 
@@ -48,4 +50,11 @@ export const loadSearchResults = async function (query) {
     console.error(`Uhhh ohh something went really wrong: ${error}`);
     throw error;
   }
+};
+
+export const getSearchResultsPage = function (page = state.search.page) {
+  state.search.page = page;
+  const start = (page - 1) * state.search.resultsPerPage;
+  const end = page * state.search.resultsPerPage;
+  return state.search.results.slice(start, end);
 };
