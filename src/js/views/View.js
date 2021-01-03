@@ -4,6 +4,15 @@ import { isArrayEmpty } from '../helpers.js';
 
 export default class View {
   _data;
+  /**
+   * Render the received object to the DOM
+   * @param {Object | Object[]} data The data to be rendered (e.g recipe)
+   * @param {boolen} [render = true] If false, create markup string instead of rendering to the DOM
+   * @returns (undefined | string) A markup is returned if render = fulse
+   * @this {Object} View instance
+   * @author okcomputer
+   * @todo Finish implementation
+   */
   render(data, render = true) {
     if (!data || isArrayEmpty(data)) return this.renderError();
     this._data = data;
