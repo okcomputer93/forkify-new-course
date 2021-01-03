@@ -76,7 +76,7 @@ export default class View {
               <use href="${icons}#icon-smile"></use>
             </svg>
           </div>
-          <p>${message}</p>
+          <p>${this._message}</p>
         </div>`;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
